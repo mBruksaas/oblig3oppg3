@@ -1,8 +1,7 @@
 import java.util.Scanner;
 
 public class SnuTekst {
-
-	static int a = 1;
+	static int a = 0;
 	
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
@@ -13,19 +12,23 @@ public class SnuTekst {
 		System.out.print("\"" + s + "\" baklengs er \"");
 		baklengs(s);
 		
-		/*Unødvendig komplisering av et ellers enkelt problem
+		/*
+		 * Unødvendig komplisering av et ellers enkelt problem (oppg1del2)
 		 * System.out.println("Antall tegn: " + s.length());
 		 */
 	}
 	
-	public static void baklengs(String tekst) {
-		int l = tekst.length();
-		if(l != 1) {
+	public static void baklengs (String tekst) {
+		baklengs(tekst, tekst.length()-1);
+	}
+	
+	public static void baklengs(String tekst, int siste) {
+		if(siste != -1) {
 			a++;
-			System.out.print(tekst.charAt(l-1));
-			baklengs(tekst.substring(0, l-1));
+			System.out.print(tekst.charAt(siste));
+			baklengs(tekst, siste-1);
 		} else {
-			System.out.println(tekst + "\"\nAntall tegn: " + a);
+			System.out.println("\"\nAntall tegn: " + a);
 		}
 	}
 }
