@@ -1,3 +1,6 @@
+/*Et enkelt program som ved rekursjon snur
+ * rekkefølgen på en string som blir tastet inn. */
+
 import java.util.Scanner;
 
 public class SnuTekst {
